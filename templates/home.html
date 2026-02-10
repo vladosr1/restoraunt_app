@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<div class="p-4 p-md-5 mb-4 rounded-4 bg-white shadow-sm">
+  <div class="row align-items-center g-4">
+    <div class="col-md-7">
+      <h1 class="display-6 fw-bold mb-2">Ресторанний додаток 🍕</h1>
+      <p class="lead text-muted mb-3">
+        Переглядай меню, обирай страви та замовляй онлайн.
+      </p>
+      <a class="btn btn-primary btn-lg" href="{% url 'menu_list' %}">Перейти до меню</a>
+    </div>
+    <div class="col-md-5">
+      <div class="border rounded-4 p-4 bg-light">
+        <div class="fw-semibold mb-2">Популярне</div>
+        <ul class="mb-0">
+          {% for d in popular %}
+            <li>{{ d.name }} — {{ d.price }} грн</li>
+          {% empty %}
+            <li class="text-muted">Поки немає популярних страв</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-12">
+    <h2 class="h4 fw-bold">Нові пропозиції</h2>
+  </div>
+
+  {% for d in new %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title mb-1">{{ d.name }}</h5>
+          <div class="text-muted small mb-3">
+            {% if d.category %}{{ d.category.name }}{% endif %}
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold">{{ d.price }} грн</span>
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'dish_detail' d.id %}">
+              Деталі
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <div class="col-12">
+      <div class="alert alert-secondary">Поки немає нових страв</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

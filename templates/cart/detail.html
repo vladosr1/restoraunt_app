@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Кошик</h1>
+
+{% if cart_items %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Страва</th>
+            <th>Кількість</th>
+            <th>Ціна</th>
+            <th>Сума</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item.dish.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.dish.price }} грн</td>
+            <td>{{ item.item_total }} грн</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h4>Разом: {{ total }} грн</h4>
+
+{% else %}
+<div class="alert alert-info">
+    Кошик порожній
+</div>
+{% endif %}
+{% endblock %}

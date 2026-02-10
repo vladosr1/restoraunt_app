@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ dish.name }}{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+  <div class="col-12 col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="h3 fw-bold mb-1">{{ dish.name }}</h1>
+        <div class="text-muted mb-3">
+          {% if dish.category %}{{ dish.category.name }}{% endif %}
+          {% if dish.is_available %}
+            <span class="badge text-bg-success ms-2">В наявності</span>
+          {% else %}
+            <span class="badge text-bg-danger ms-2">Немає</span>
+          {% endif %}
+        </div>
+
+        <p class="mb-4">{{ dish.description }}</p>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="fs-4 fw-bold">{{ dish.price }} грн</div>
+          <a class="btn btn-secondary" href="{% url 'menu_list' %}">⬅ Назад</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="fw-semibold mb-2">Підказка</div>
+        <div class="text-muted small">
+          Далі ми додамо кнопку “Додати в кошик” і сторінку кошика 🛒
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
