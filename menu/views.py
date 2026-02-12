@@ -9,7 +9,10 @@ def home(request):
 
 def menu_list(request):
     q = request.GET.get('q', '')
-    category = request.GET.get('cat', '')
+    category = request.GET.get('cat', '')   # ← ОСЬ ТУТ
+
+    print("CATEGORY =", category)
+
     dishes = Dish.objects.all()
 
     if category:
@@ -19,8 +22,13 @@ def menu_list(request):
         dishes = dishes.filter(Q(name__icontains=q) | Q(description__icontains=q))
 
     categories = Category.objects.all()
-    return render(request, 'menu/list.html', {'dishes': dishes, 'categories': categories, 'q': q, 'category': category})
 
+    return render(request, 'menu/list.html', {
+        'dishes': dishes,
+        'categories': categories,
+        'q': q,
+        'category': category
+    })
 def dish_detail(request, pk):
     dish = get_object_or_404(Dish, pk=pk)
     return render(request, 'menu/detail.html', {'dish': dish})

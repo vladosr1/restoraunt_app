@@ -25,5 +25,7 @@ class Dish(models.Model):
     is_popular = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    image = models.ImageField(upload_to="dishes/", blank=True, null=True)
+
     def __str__(self):
         return self.name

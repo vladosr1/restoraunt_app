@@ -27,15 +27,25 @@ def cart_detail(request):
 
 def add_to_cart(request, dish_id):
     cart = request.session.get('cart')
+    dish_id = str(dish_id)
 
     if cart is None:
         cart = {}
-
-    dish_id = str(dish_id)
 
     cart[dish_id] = cart.get(dish_id, 0) + 1
 
     request.session['cart'] = cart
     request.session.modified = True
+    return redirect('cart:cart_detail')
 
+def cart_decrease(request, dish_id):
+    cart = request.session.get('cart',)
+    dish_id = str(dish_id)
+
+    if dish_id in cart:
+        cart[dish_id] -= 1
+        if cart[dish_id] <= 0:
+            del cart[dish_id]
+
+    request.session['cart'] = cart
     return redirect('cart:cart_detail')

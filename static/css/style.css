@@ -1,0 +1,85 @@
+/* ====== GLOBAL ====== */
+
+body {
+    background: radial-gradient(circle at top, #2b2b2b, #111);
+    color: #f5f5f5;
+    font-family: "Georgia", serif;
+    min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    background: rgba(0,0,0,0.75) !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-brand {
+    font-family: "Times New Roman", serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* ===== HERO ===== */
+
+.hero-section {
+    padding: 90px 20px;
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.85)),
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-family: "Times New Roman", serif;
+    color: #f8e7c9;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+/* ===== BUTTON ===== */
+
+.btn-bistro {
+    background: #c59d5f;
+    color: black;
+    font-weight: 600;
+    padding: 12px 26px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.btn-bistro:hover {
+    background: #e5b76b;
+    transform: translateY(-2px);
+}
+
+/* ===== CARDS ===== */
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    color: white;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #c59d5f;
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+    background: rgba(0,0,0,0.85);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #bbb;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}

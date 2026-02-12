@@ -3,28 +3,15 @@
 {% block title %}Головна{% endblock %}
 
 {% block content %}
-<div class="p-4 p-md-5 mb-4 rounded-4 bg-white shadow-sm">
-  <div class="row align-items-center g-4">
-    <div class="col-md-7">
-      <h1 class="display-6 fw-bold mb-2">Ресторанний додаток 🍕</h1>
-      <p class="lead text-muted mb-3">
-        Переглядай меню, обирай страви та замовляй онлайн.
-      </p>
-      <a class="btn btn-primary btn-lg" href="{% url 'menu_list' %}">Перейти до меню</a>
-    </div>
-    <div class="col-md-5">
-      <div class="border rounded-4 p-4 bg-light">
-        <div class="fw-semibold mb-2">Популярне</div>
-        <ul class="mb-0">
-          {% for d in popular %}
-            <li>{{ d.name }} — {{ d.price }} грн</li>
-          {% empty %}
-            <li class="text-muted">Поки немає популярних страв</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="hero-section text-center mb-5">
+    <h1 class="hero-title">Ratatouille Bistro</h1>
+    <p class="hero-subtitle">
+        Смак Парижу у кожній страві
+    </p>
+
+    <a href="{% url 'menu_list' %}" class="btn btn-bistro mt-3">
+        Переглянути меню
+    </a>
 </div>
 
 <div class="row g-3">
