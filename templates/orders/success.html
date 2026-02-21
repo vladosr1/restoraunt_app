@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="alert alert-success">
+    Замовлення прийнято! ✅ Ваш номер: <b>#{{ order.id }}</b>
+</div>
+
+<p>Статус: <b>{{ order.get_status_display }}</b></p>
+
+<a class="btn btn-dark" href="{% url 'menu_list' %}">Повернутись в меню</a>
+
+{% endblock %}

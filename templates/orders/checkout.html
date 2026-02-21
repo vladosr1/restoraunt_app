@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-3">Оформлення замовлення</h2>
+
+<div class="row">
+  <div class="col-md-7">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn-warning">Підтвердити замовлення</button>
+    </form>
+  </div>
+
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header fw-bold">Ваше замовлення</div>
+      <div class="card-body">
+        {% for it in items %}
+          <div class="d-flex justify-content-between">
+            <div>{{ it.dish.name }} × {{ it.qty }}</div>
+            <div>{{ it.line_total }} грн</div>
+          </div>
+        {% endfor %}
+        <hr>
+        <div class="d-flex justify-content-between fw-bold">
+          <div>Разом</div>
+          <div>{{ total }} грн</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
