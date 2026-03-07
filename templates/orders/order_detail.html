@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Замовлення #{{ order.id }}</h2>
+<p>Статус: <b>{{ order.get_status_display }}</b></p>
+<p>Дата: {{ order.created_at }}</p>
+
+<hr>
+
+<h4>Страви:</h4>
+
+<ul>
+    {% for item in items %}
+        <li>
+            {{ item.dish.name }} —
+            {{ item.quantity }} × {{ item.price }} грн
+        </li>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<h3>Загальна сума: {{ total }} грн</h3>
+
+<a href="{% url 'orders:my_orders' %}" class="btn btn-dark">
+    Назад до замовлень
+</a>
+
+{% endblock %}

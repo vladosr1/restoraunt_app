@@ -1,4 +1,4 @@
-/* ====== GLOBAL ====== */
+/* ================= GLOBAL ================= */
 
 body {
     background: radial-gradient(circle at top, #2b2b2b, #111);
@@ -7,12 +7,12 @@ body {
     min-height: 100vh;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAVBAR ================= */
 
 .navbar {
-    background: rgba(0,0,0,0.75) !important;
+    background: rgba(0, 0, 0, 0.75) !important;
     backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-brand {
@@ -21,7 +21,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO SECTION ================= */
 
 .hero-section {
     padding: 90px 20px;
@@ -43,7 +43,7 @@ body {
     color: #ddd;
 }
 
-/* ===== BUTTON ===== */
+/* ================= BUTTON ================= */
 
 .btn-bistro {
     background: #c59d5f;
@@ -51,34 +51,53 @@ body {
     font-weight: 600;
     padding: 12px 26px;
     border-radius: 30px;
-    transition: .3s;
+    transition: 0.3s ease;
 }
 
 .btn-bistro:hover {
     background: #e5b76b;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(197, 157, 95, 0.4);
 }
 
-/* ===== CARDS ===== */
+/* ================= CARDS ================= */
 
 .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
     color: white;
-    transition: .25s;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: #c59d5f;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== FOOTER ===== */
+/* Картинки в картках */
+
+.card img {
+    transition: 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Текст другорядний */
+
+.text-muted {
+    color: #bbbbbb !important;
+}
+
+/* ================= FOOTER ================= */
 
 .footer {
-    background: rgba(0,0,0,0.85);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     color: #bbb;
     font-size: 0.95rem;
     letter-spacing: 1px;
